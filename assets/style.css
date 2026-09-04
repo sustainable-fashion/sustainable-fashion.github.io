@@ -5,8 +5,9 @@
    Structure and typography mirror futuresociety.ch (FuSo): 12-column
    grid with a narrow label gutter, rule-topped section labels, hairline
    card grids, the odd/even section rhythm. The accent, however, is
-   Circular Lab's own orange (taken from its logo), not FuSo's green —
-   the workshop is a Circular Lab sub-event and carries its mark.
+   the poster's own slate blue, deepened for legibility — not FuSo's
+   green and not Circular Lab's orange, which reads too loud for a day
+   about evidence. The parent programme's mark carries its own colour.
    Extended with the workshop poster's slate/cream and mono eyebrows.
    ───────────────────────────────────────────────────────────── */
 
@@ -17,8 +18,12 @@
   --white:   #ffffff;
   --gray:    #f4f4f4;
   --mid:     #999999;
-  --accent:  #e7440b;     /* Circular Lab orange, sampled from its logo */
-  --accent-d: #c73708;    /* pressed / hover */
+  /* Accent: one colour, three forms. Change all three together — nothing
+     else in the sheet hard-codes it. (The favicon is generated to match;
+     see .agent-notes.md for the recipe.) */
+  --accent:   #2e6483;    /* deepened poster slate */
+  --accent-d: #234e67;    /* pressed / hover */
+  --accent-rgb: 46, 100, 131;   /* for the low-opacity tints */
   --slate:   #4a7c99;     /* poster: the blue panels */
   --cream:   #e8e1d3;     /* poster: the off-white drape */
   --font:    'Inter', system-ui, -apple-system, sans-serif;
@@ -203,7 +208,6 @@ nav a:hover { color: var(--accent); }
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
 .hero-rule { width: 56px; height: 2px; background: var(--black); margin: 1.5rem 0; }
@@ -224,7 +228,7 @@ nav a:hover { color: var(--accent); }
   text-transform: uppercase;
   margin-top: 0.9rem;
 }
-.hero-by a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(231, 68, 11, 0.4); }
+.hero-by a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(var(--accent-rgb), 0.4); }
 .hero-by a:hover { border-bottom-color: var(--accent); }
 
 .hero-date {
@@ -267,15 +271,6 @@ nav a:hover { color: var(--accent); }
 .btn-solid:hover { background: var(--black); border-color: var(--black); }
 .btn-ghost { background: transparent; color: var(--accent); }
 .btn-ghost:hover { background: var(--accent); color: var(--white); }
-
-/* Stand-in for the registration link until the URL exists. Deliberately
-   not an <a>: a button that goes nowhere is worse than one that says so. */
-.btn-pending {
-  background: transparent;
-  color: var(--mid);
-  border: 1px dashed #cccccc;
-  cursor: default;
-}
 
 /* ─── PARENT PROGRAMME BAR ─── */
 /* Full-bleed black strip directly under the hero: names the programme this
@@ -352,7 +347,7 @@ nav a:hover { color: var(--accent); }
   grid-column: 3 / 13;
   border: 1px solid var(--accent);
   border-radius: 8px;
-  background: rgba(231, 68, 11, 0.06);
+  background: rgba(var(--accent-rgb), 0.06);
   padding: 1.75rem 2rem;
 }
 .intro-box p { color: var(--black); font-size: 1.05rem; }
@@ -549,7 +544,7 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
   color: inherit;
   transition: border-color 0.15s, background 0.15s;
 }
-.tag:hover { border-color: var(--accent); background: rgba(231, 68, 11, 0.06); }
+.tag:hover { border-color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
 
 .tag-avatar {
   width: 26px; height: 26px;
@@ -582,7 +577,7 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
   margin: 0.5rem 0;
   padding-left: 1.25rem;
   border-left: 2px solid var(--accent);
-  background: linear-gradient(90deg, rgba(231, 68, 11, 0.05), rgba(231, 68, 11, 0) 55%);
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.05), rgba(var(--accent-rgb), 0) 55%);
 }
 .cluster .slot { grid-template-columns: 7.25rem 1fr; }
 .cluster .slot:last-child { border-bottom: none; }
@@ -606,6 +601,7 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 .slot--break { background: transparent; }
 .slot--break .slot-title { font-size: 0.9rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.12em; }
 .slot--break .slot-time { color: var(--mid); }
+.slot--break .slot-note { font-size: 0.82rem; color: var(--mid); margin-top: 0.3rem; }
 
 /* The exhibit slot gets the cream ground so it reads as the one
    non-talk item in the day. */
@@ -774,6 +770,8 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 .fact a:hover { opacity: 0.7; }
 
 .venue-cta { grid-column: 3 / -1; margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.cta-note { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); margin-left: 0.5rem; }
+@media (max-width: 700px) { .cta-note { margin-left: 0; flex-basis: 100%; } }
 
 /* ─── FOOTER ─── */
 footer { background: var(--white); color: var(--black); padding: 3.5rem 0; border-top: 2px solid var(--gray); }

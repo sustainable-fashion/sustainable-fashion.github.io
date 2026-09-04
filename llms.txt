@@ -20,7 +20,8 @@
 
 ## Programme
 
-- 09.00–09.15 — Welcome and Opening — Prof. Dr. Andrei Ciortea (ICS-HSG)
+- 09.00–09.15 — Welcome and Opening — Prof. Dr. Andrei Ciortea (ICS-HSG),
+  Fabian Takacs (HSG) and Steffen Finck (FHV), who lead Circular Lab
 - 09.15–09.45 — Is Circularity Always More Sustainable? Insights from Life Cycle
   Assessment — Didier Beloin-Saint-Pierre (Empa)
 - 09.45–10.00 — Fashion Exhibits: Modular, Upcycled, Heritage & Natural —

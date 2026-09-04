@@ -717,6 +717,18 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 }
 .speaker-duo .speaker-avatar { width: 72px; height: 72px; margin-bottom: 0; }
 
+/* Three portraits in one card: smaller again, so the row still fits the
+   four-up column at 1024px. */
+.speaker-trio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: 108px;
+  margin-bottom: 1.25rem;
+}
+.speaker-trio .speaker-avatar { width: 60px; height: 60px; margin-bottom: 0; }
+
 /* ─── EXHIBITS ─── */
 .exhibit-grid {
   grid-column: 3 / -1;

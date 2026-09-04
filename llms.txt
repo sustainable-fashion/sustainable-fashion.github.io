@@ -1,0 +1,85 @@
+# Sustainability in Fashion and Textiles: Closing the Loop
+
+> A one-day workshop bringing together life cycle assessment, circular design
+> practice, and the Digital Product Passport, with a fashion exhibit of modular,
+> upcycled, heritage and natural pieces.
+>
+> It is a **sub-event of Circular Lab** (https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/),
+> the University of St.Gallen's research programme for a sustainable circular
+> economy in the Lake Constance region — specifically its textiles focus area.
+
+- **When:** Tuesday, 27 October 2026, 9.00–15.30
+- **Where:** Atrium, HSG Square (SQUARE, Guisanstrasse 20, 9010 St.Gallen), Switzerland
+- **Host programme:** Circular Lab, co-led by the University of St.Gallen,
+  funded with EUR 4 million through Interreg Alpenrhein-Bodensee-Hochrhein and
+  Switzerland's New Regional Policy; six universities and 30+ practice partners;
+  focus areas textiles and agri-food.
+- **Language:** English. Registration required, participation fee applies; the
+  registration link will be published on the site.
+
+## Programme
+
+- 09.00–09.15 — Welcome and Opening — Prof. Dr. Andrei Ciortea (ICS-HSG)
+- 09.15–09.45 — Is Circularity Always More Sustainable? Insights from Life Cycle
+  Assessment — Didier Beloin-Saint-Pierre (Empa)
+- 09.45–10.00 — Fashion Exhibits: Modular, Upcycled, Heritage & Natural —
+  Cristina Dan, Jonas Bendel, Simeon Triantafillidis
+- 10.00–10.30 — Coffee Break
+- 10.30–11.00 — Startup Perspective: Circular Fashion — Cristina Dan (SOLVE Studio)
+- 11.00–11.30 — Student Perspective: Modern Fashion for Circularity —
+  Jonas Bendel & Simeon Triantafillidis (Albstadt-Sigmaringen University)
+- 11.30–12.00 — Change Management & Sustainability — OST (speaker to be announced)
+- 12.00–12.30 — Circular Economy Information System — Alessandro Giugno (ICS-HSG)
+- 12.30–13.30 — Lunch Break
+- Deep dive, Digital Product Passport (one block, two talks):
+  - 13.30–14.00 — Regulation, Standards & Roll-outs for Apparel —
+    Dominique Guinard (spotd)
+  - 14.00–14.30 — DPP in Action: Real-World Case Studies for the Circular
+    Economy — Moritz Fiertz (FREITAG AG)
+- 14.30–15.30 — Panel Discussion with the Audience: The Sustainability and
+  Globalization Conundrum
+
+## Speakers
+
+- **Prof. Dr. Andrei Ciortea** — Assistant Professor for Web-based Systems,
+  Institute of Computer Science, University of St.Gallen; co-initiator of
+  Circular Lab.
+- **Didier Beloin-Saint-Pierre** — Scientist, Technology & Society Lab, Empa.
+  Environmental assessment of energy and materials systems; digital ecosystems
+  for verifiable LCA and GHG accounting.
+- **Cristina Dan** — Founder & Designer, SOLVE Studio. Contextual fashion
+  designer and researcher; created Omdanne (first circular multifunctional
+  collection) and the zero-waste Refashion strategy.
+- **Jonas Bendel & Simeon Triantafillidis** — Albstadt-Sigmaringen University
+  (hs-albsig.de). Longevity, heritage, vintage and natural pieces; the
+  R-strategies in practice.
+- **Alessandro Giugno** — Institute of Computer Science, University of St.Gallen.
+  Socio-technical systems; information management for circular economy and
+  sustainability.
+- **Dominique Guinard** — Founder, spotd; co-founder, EVRYTHNG. Web of Things
+  pioneer, co-chair of the GS1 Digital Link standard, contributor to DPP,
+  EPCIS 2.0 and C2PA.
+- **Moritz Fiertz** — FREITAG AG. Digital Product Passport in the Circular Tarp
+  programme.
+
+## Parent programme
+
+Circular Lab research network: University of St.Gallen, OST, ZHAW,
+Albstadt-Sigmaringen University, DHBW Ravensburg, FHV Vorarlberg.
+Funders: Interreg Alpenrhein-Bodensee-Hochrhein (co-funded by the European
+Union), the Swiss Confederation, and the Canton of St.Gallen.
+
+Circular Lab advances the circular economy by optimising business models,
+developing product designs, and building the ecosystems circular products need.
+Its textiles strand works on modular garment design, recyclability, and reducing
+overproduction. Formats include the Circular Lab Conference, the CLab Exchange,
+webinars, museum collaborations, and workshops such as this one.
+
+- Circular Lab: https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/
+- More about the lab: https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/mehr-zum-lab/
+- Partner network: https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/weitere-partner/
+
+## Site
+
+- Single static page: `index.html` + `assets/style.css`. No build step.
+- Design mirrors futuresociety.ch (FuSo).

@@ -1,0 +1,878 @@
+/* ─────────────────────────────────────────────────────────────
+   Sustainability in Fashion and Textiles: Closing the Loop
+   Circular Lab workshop, 27 October, HSG Square, St.Gallen
+
+   Structure and typography mirror futuresociety.ch (FuSo): 12-column
+   grid with a narrow label gutter, rule-topped section labels, hairline
+   card grids, the odd/even section rhythm. The accent, however, is
+   Circular Lab's own orange (taken from its logo), not FuSo's green —
+   the workshop is a Circular Lab sub-event and carries its mark.
+   Extended with the workshop poster's slate/cream and mono eyebrows.
+   ───────────────────────────────────────────────────────────── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #111111;
+  --white:   #ffffff;
+  --gray:    #f4f4f4;
+  --mid:     #999999;
+  --accent:  #e7440b;     /* Circular Lab orange, sampled from its logo */
+  --accent-d: #c73708;    /* pressed / hover */
+  --slate:   #4a7c99;     /* poster: the blue panels */
+  --cream:   #e8e1d3;     /* poster: the off-white drape */
+  --font:    'Inter', system-ui, -apple-system, sans-serif;
+  --mono:    ui-monospace, 'SFMono-Regular', 'Menlo', 'Consolas', monospace;
+  --gap: 2rem;
+  --max: 1280px;
+  --nav: 56px;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Fixed nav: keep anchored sections and speaker cards clear of the bar */
+section, #hero, .speaker-card { scroll-margin-top: calc(var(--nav) + 1rem); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.3fr repeat(11, 1fr);
+  gap: var(--gap);
+}
+
+img { max-width: 100%; }
+h1, h2, h3, p { overflow-wrap: break-word; }
+.accent-text { color: var(--accent); }
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 2px solid var(--gray);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+
+/* Host programme's mark, a hairline divider, then the event name — the
+   same lockup a sub-brand normally gets. */
+.nav-parent { display: flex; align-items: center; }
+.nav-parent img { height: 28px; width: auto; display: block; transition: opacity 0.15s; }
+.nav-parent:hover img { opacity: 0.65; }
+
+.nav-divider { width: 1px; height: 24px; background: #dcdcdc; flex-shrink: 0; }
+
+.nav-wordmark {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--black);
+  text-decoration: none;
+}
+.nav-wordmark:hover { color: var(--black); }
+
+nav ul { list-style: none; }
+#navMenu { display: flex; align-items: center; gap: 1.75rem; margin-left: auto; }
+
+nav a {
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+  transition: color 0.15s;
+}
+nav a:hover { color: var(--accent); }
+
+/* Date chip in the bar — the one fact every visitor is after */
+.nav-date {
+  margin-left: 1.5rem;
+  padding: 0.3rem 0.7rem;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.nav-date:hover { color: var(--white); background: var(--accent-d); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px; height: 40px;
+  padding: 8px;
+  background: none; border: none; cursor: pointer;
+}
+.nav-toggle span { display: block; width: 100%; height: 2px; background: var(--black); transition: transform 0.25s, opacity 0.25s; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── HERO ─── */
+/* Rebuilds the poster: full-bleed campaign photo with the white
+   type panel sitting on its left third. */
+#hero {
+  margin-top: var(--nav);
+  position: relative;
+  background: #cfd3d6;
+  overflow: hidden;
+}
+
+/* Soft white wash over the left third, so the type panel sits on a calm
+   ground the way the poster's white column does, instead of on top of a
+   half-covered model. Fades out well before the centre look. */
+#hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.88) 0%,
+    rgba(255,255,255,0.78) 20%,
+    rgba(255,255,255,0.30) 36%,
+    rgba(255,255,255,0) 48%);
+  pointer-events: none;
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: clamp(460px, 62vw, 760px);
+  object-fit: cover;
+  object-position: 62% 32%;
+}
+
+.hero-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.hero-card {
+  pointer-events: auto;
+  background: var(--white);
+  padding: 2.75rem 2.5rem 2.25rem;
+  width: min(470px, 100%);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+}
+
+.hero-kicker {
+  font-size: clamp(2.4rem, 4.4vw, 3.3rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-rule { width: 56px; height: 2px; background: var(--black); margin: 1.5rem 0; }
+
+.hero-title {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hero-by {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.9rem;
+}
+.hero-by a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(231, 68, 11, 0.4); }
+.hero-by a:hover { border-bottom-color: var(--accent); }
+
+.hero-date {
+  font-size: clamp(2.2rem, 4.4vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hero-year { color: var(--mid); font-weight: 400; letter-spacing: -0.01em; }
+
+.hero-time { font-size: 1.35rem; font-weight: 600; line-height: 1.2; margin-top: 0.15rem; }
+
+.hero-place {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 0.75rem;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  transition: background 0.15s, color 0.15s;
+}
+.btn-solid { background: var(--accent); color: var(--white); }
+.btn-solid:hover { background: var(--black); border-color: var(--black); }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn-ghost:hover { background: var(--accent); color: var(--white); }
+
+/* Stand-in for the registration link until the URL exists. Deliberately
+   not an <a>: a button that goes nowhere is worse than one that says so. */
+.btn-pending {
+  background: transparent;
+  color: var(--mid);
+  border: 1px dashed #cccccc;
+  cursor: default;
+}
+
+/* ─── PARENT PROGRAMME BAR ─── */
+/* Full-bleed black strip directly under the hero: names the programme this
+   workshop belongs to before any of the event's own content starts. */
+.parent-bar {
+  display: block;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.parent-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.1rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.1rem 2rem;
+}
+.parent-bar:hover { background: #000; }
+.parent-bar:hover .parent-bar-go { color: var(--white); }
+
+.parent-bar-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8d8d8d;
+}
+
+.parent-bar-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+.parent-bar-name::after {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  margin-left: 0.75rem;
+  vertical-align: 0.15em;
+  background: var(--accent);
+}
+
+.parent-bar-desc {
+  flex: 1 1 22rem;
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #cfcfcf;
+}
+
+.parent-bar-go {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+/* Inline text link inside body copy */
+.inline-link { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.inline-link:hover { opacity: 0.7; }
+
+/* ─── MISSION BOX ─── */
+.intro-standalone { padding: 4rem 0 5rem; }
+.intro-box {
+  grid-column: 3 / 13;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(231, 68, 11, 0.06);
+  padding: 1.75rem 2rem;
+}
+.intro-box p { color: var(--black); font-size: 1.05rem; }
+.intro-box p + p { margin-top: 1rem; }
+
+/* ─── SECTIONS ─── */
+section { padding: 6rem 0; }
+section:nth-of-type(odd)  { background: var(--gray); }
+section:nth-of-type(even) { background: var(--white); }
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding-top: 0.85rem;
+  border-top: 2px solid var(--black);
+}
+
+.col-label  { grid-column: 1 / 3; align-self: start; }
+.col-head   { grid-column: 3 / 13; }
+.col-body   { grid-column: 3 / 13; }
+.col-full   { grid-column: 3 / -1; }
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
+
+.lead { font-size: 1.1rem; margin-top: 1.25rem; max-width: 62ch; }
+
+/* ─── ABOUT: the three threads ─── */
+.thread-grid {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.thread-card { background: var(--white); padding: 2rem; display: flex; flex-direction: column; }
+
+.thread-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.thread-card h3 { font-size: 1rem; }
+.thread-card p { font-size: 0.9rem; }
+
+/* ─── CIRCULAR LAB ─── */
+/* The programme's own mark, set beside a one-paragraph statement of what
+   it is — the only place on the page where the logo is shown at size. */
+.lab-brand {
+  grid-column: 3 / -1;
+  margin-top: 2.75rem;
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2rem;
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--black);
+}
+.lab-brand-logo { display: block; }
+.lab-brand-logo img { width: 100%; max-width: 240px; height: auto; display: block; transition: opacity 0.15s; }
+.lab-brand-logo:hover img { opacity: 0.7; }
+.lab-brand p { font-size: 0.95rem; margin: 0; }
+
+/* Logo rows (research network, funders). Hairline tiles, each logo capped
+   by optical weight rather than pixel height — the marks carry very
+   different amounts of detail. */
+.logo-block { grid-column: 3 / -1; margin-top: 2.5rem; }
+
+.logo-block-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1px;
+  border-bottom: 1px solid var(--black);
+}
+
+.logo-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+}
+.logo-row--three { grid-template-columns: repeat(3, 1fr); }
+
+.logo-tile {
+  background: var(--white);
+  box-shadow: 0 0 0 1px #dcdcdc;
+  min-height: 118px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.logo-tile:hover { background: var(--gray); box-shadow: 0 0 0 1px var(--black); }
+
+.logo-img { max-width: 100%; max-height: 44px; width: auto; height: auto; object-fit: contain; }
+.logo-img--zhaw  { max-height: 62px; }
+.logo-img--dhbw  { max-height: 58px; }
+.logo-img--hsg   { max-height: 34px; }
+.logo-img--wappen { max-height: 66px; }
+
+
+/* Same hairline-grid treatment as the About threads, so the parent
+   programme reads as part of the same system rather than a bolt-on. */
+.lab-grid {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.lab-card { background: var(--white); padding: 2rem; display: flex; flex-direction: column; }
+
+.lab-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.lab-card h3 { font-size: 1rem; }
+.lab-card p { font-size: 0.9rem; }
+
+
+/* ─── PROGRAM ─── */
+.programme { grid-column: 3 / -1; margin-top: 2.5rem; border-top: 1px solid var(--black); }
+
+.slot {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 1.5rem;
+  padding: 1.4rem 0.25rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.slot-time {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-top: 0.15rem;
+  white-space: nowrap;
+}
+
+.slot-title { font-size: 1.05rem; font-weight: 700; line-height: 1.35; letter-spacing: -0.01em; }
+
+.slot-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.slot-note { font-size: 0.88rem; font-weight: 300; color: #555; margin-top: 0.5rem; max-width: 60ch; }
+
+/* Speaker tag — the recurring badge that links a session to a person.
+   Round B&W thumbnail + name + affiliation, in one pill. Also used
+   standalone in the Speakers section grid. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.25rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 999px;
+  background: var(--white);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.tag:hover { border-color: var(--accent); background: rgba(231, 68, 11, 0.06); }
+
+.tag-avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+  background: var(--gray);
+}
+
+.tag-avatar--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--mid);
+  background: var(--gray);
+}
+
+.tag-name { font-size: 0.8rem; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+.tag-org  { font-size: 0.72rem; font-weight: 400; color: var(--mid); white-space: nowrap; }
+.tag-org::before { content: "· "; }
+
+/* Two consecutive talks read as one deep dive: a labelled bracket down
+   the left edge ties them together without breaking the time column. */
+.cluster {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  background: linear-gradient(90deg, rgba(231, 68, 11, 0.05), rgba(231, 68, 11, 0) 55%);
+}
+.cluster .slot { grid-template-columns: 7.25rem 1fr; }
+.cluster .slot:last-child { border-bottom: none; }
+
+.cluster-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  padding: 1rem 0 0.25rem;
+}
+.cluster-label span {
+  color: var(--accent);
+  margin-right: 0.5rem;
+}
+.cluster-label span::after { content: " \2192"; }
+
+/* Breaks: same row, deliberately quiet */
+.slot--break { background: transparent; }
+.slot--break .slot-title { font-size: 0.9rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.12em; }
+.slot--break .slot-time { color: var(--mid); }
+
+/* The exhibit slot gets the cream ground so it reads as the one
+   non-talk item in the day. */
+.slot--exhibit { background: rgba(232, 225, 211, 0.5); padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; }
+
+.slot--tba .slot-title { color: #444; }
+
+.tba-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px dashed #cccccc;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+}
+
+/* ─── SPEAKERS ─── */
+/* Four-up like the FuSo team bricks: with eight speakers that fills two
+   complete rows, where a three-column grid would leave a gap. */
+.speaker-grid {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+}
+
+.speaker-card {
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--black);
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: background 0.15s;
+}
+.speaker-card:hover { background: var(--gray); }
+
+.speaker-avatar {
+  width: 108px; height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 1.1rem;
+  filter: grayscale(1);
+}
+
+.speaker-avatar--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray);
+  color: var(--mid);
+  font-size: 1.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.speaker-role {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.speaker-name { font-size: 0.98rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; text-wrap: balance; }
+.speaker-org  { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
+
+.speaker-talk {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #e6e6e6;
+  width: 100%;
+}
+.speaker-talk em { font-style: normal; color: var(--black); font-weight: 600; }
+
+.speaker-link {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+}
+.speaker-link:hover { opacity: 0.65; }
+
+/* Cards that hold two people (the student duo). The wrapper keeps the
+   128px height of a single avatar so the role/name lines of every card in
+   a row sit on the same baseline. */
+.speaker-duo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 108px;
+  margin-bottom: 1.1rem;
+}
+.speaker-duo .speaker-avatar { width: 72px; height: 72px; margin-bottom: 0; }
+
+/* ─── EXHIBITS ─── */
+.exhibit-grid {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.exhibit-card { background: var(--white); padding: 2rem; }
+
+.exhibit-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--slate);
+  padding: 0.28rem 0.6rem;
+  margin-bottom: 1rem;
+}
+.exhibit-card:nth-child(2) .exhibit-tag { background: var(--accent); }
+.exhibit-card:nth-child(3) .exhibit-tag { background: var(--black); }
+
+.exhibit-card p { font-size: 0.9rem; }
+
+/* ─── VENUE ─── */
+.facts { grid-column: 3 / -1; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
+
+.fact {
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--black);
+  padding: 2rem 1.75rem;
+}
+
+.fact-label {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-bottom: 0.6rem;
+}
+.fact-value { font-size: 1.25rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; }
+.fact-sub { font-size: 0.85rem; font-weight: 300; color: #555; margin-top: 0.35rem; }
+.fact a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+.fact a:hover { opacity: 0.7; }
+
+.venue-cta { grid-column: 3 / -1; margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+
+/* ─── FOOTER ─── */
+footer { background: var(--white); color: var(--black); padding: 3.5rem 0; border-top: 2px solid var(--gray); }
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem 4rem;
+}
+
+.footer-logo { display: flex; align-items: center; gap: 1rem; }
+.footer-logo img { width: 130px; height: auto; }
+.footer-wordmark { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.footer-sub { font-size: 0.78rem; font-weight: 300; color: var(--mid); margin-top: 0.15rem; }
+.footer-hsg { height: 44px; width: auto; }
+.footer-note { flex-basis: 100%; text-align: center; font-size: 0.75rem; font-weight: 300; color: var(--mid); }
+.footer-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.footer-note a:hover { color: var(--accent); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1100px) {
+  .nav-toggle { display: flex; margin-left: 0.5rem; }
+
+  #navMenu {
+    display: none;
+    position: absolute;
+    top: var(--nav);
+    left: 0; right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem 2rem 1.25rem;
+    background: var(--white);
+    border-bottom: 2px solid var(--gray);
+  }
+  #navMenu.open { display: flex; }
+  #navMenu > li { padding: 0.65rem 0; }
+  #navMenu > li > a { font-size: 0.85rem; }
+
+  .nav-date { margin-left: auto; }
+}
+
+@media (max-width: 900px) {
+  :root { --gap: 1.5rem; }
+
+  .grid { grid-template-columns: 1fr; }
+  .grid > * { min-width: 0; }
+
+  .col-label { justify-self: start; width: 100%; }
+  .col-label, .col-head, .col-body, .col-full,
+  .intro-box, .thread-grid, .programme, .lab-grid, .lab-brand, .logo-block,
+  .speaker-grid, .exhibit-grid, .facts, .venue-cta { grid-column: 1 / -1; }
+
+  .lab-brand { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+  .lab-brand-logo img { margin: 0 auto; }
+  .lab-brand p { text-align: left; }
+
+  .logo-row { grid-template-columns: repeat(3, 1fr); }
+
+  /* Photo and card stack instead of overlapping: at this width the card
+     covers the whole frame and the campaign shot stops being visible.
+     The white wash goes with it — stacked, it would sit *over* the panel
+     and bleach the type. */
+  #hero { background: var(--white); }
+  #hero::after { display: none; }
+  .hero-photo { height: clamp(280px, 56vw, 420px); object-position: 60% 25%; }
+  .hero-inner { position: static; display: block; padding: 0; }
+  .hero-card { width: 100%; box-shadow: none; padding: 2.25rem 2rem 2.5rem; }
+
+  .thread-grid, .lab-grid, .speaker-grid, .exhibit-grid, .facts { grid-template-columns: 1fr; }
+  .speaker-grid, .facts { gap: 1px; }
+}
+
+@media (max-width: 700px) {
+  .slot { grid-template-columns: 1fr; gap: 0.35rem; }
+  .slot-time { padding-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  #navMenu { padding: 0.5rem 1.25rem 1.25rem; }
+  section { padding: 4rem 0; }
+  .intro-standalone { padding: 3rem 0 3.5rem; }
+  .hero-card { padding: 2rem 1.25rem 2.25rem; }
+  /* Circular Lab's mark alone — the event name and its divider do not fit
+     next to the date chip and the hamburger at this width. */
+  .nav-wordmark, .nav-divider { display: none; }
+  .thread-card, .lab-card, .exhibit-card, .fact { padding: 1.5rem 1.25rem; }
+  .parent-bar-inner { padding: 1rem 1.25rem; }
+  .lab-brand { padding: 1.5rem 1.25rem; }
+  .logo-row { grid-template-columns: repeat(2, 1fr); }
+  .logo-tile { min-height: 96px; padding: 1.1rem 0.9rem; }
+  .cluster { padding-left: 0.9rem; }
+  .cluster .slot { grid-template-columns: 1fr; }
+}
+
+/* ─── TABLET: keep speakers two-up before collapsing ─── */
+@media (min-width: 901px) and (max-width: 1050px) {
+  .speaker-grid, .thread-grid, .lab-grid, .exhibit-grid, .facts { grid-template-columns: repeat(2, 1fr); }
+}

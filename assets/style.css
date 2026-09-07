@@ -385,6 +385,13 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 
 .lead { font-size: 1.1rem; margin-top: 1.25rem; max-width: 62ch; }
 
+/* These three section leads are intentionally allowed to use the full content
+   measure. At the desktop grid width this produces two even lines instead of
+   leaving a short third line below the heading. */
+#about .lead,
+#exhibits .lead,
+#circular-lab .lead { max-width: none; }
+
 /* ─── ABOUT: the three threads ─── */
 .thread-grid {
   grid-column: 3 / -1;
@@ -623,13 +630,13 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 }
 
 /* ─── SPEAKERS ─── */
-/* Four-up like the FuSo team bricks: with eight speakers that fills two
-   complete rows, where a three-column grid would leave a gap. */
+/* Three-up keeps the nine workshop contributors in complete rows while
+   retaining the compact team-brick treatment. */
 .speaker-grid {
   grid-column: 3 / -1;
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
 }
 
@@ -717,8 +724,8 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 }
 .speaker-duo .speaker-avatar { width: 72px; height: 72px; margin-bottom: 0; }
 
-/* Three portraits in one card: smaller again, so the row still fits the
-   four-up column at 1024px. */
+/* Three portraits in one card are reduced so that the coordinator group
+   remains compact within the contributor grid. */
 .speaker-trio {
   display: flex;
   align-items: center;
@@ -753,8 +760,8 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
   padding: 0.28rem 0.6rem;
   margin-bottom: 1rem;
 }
+.exhibit-card:first-child .exhibit-tag { background: var(--black); }
 .exhibit-card:nth-child(2) .exhibit-tag { background: var(--accent); }
-.exhibit-card:nth-child(3) .exhibit-tag { background: var(--black); }
 
 .exhibit-card p { font-size: 0.9rem; }
 
@@ -885,4 +892,5 @@ footer .container {
 /* ─── TABLET: keep speakers two-up before collapsing ─── */
 @media (min-width: 901px) and (max-width: 1050px) {
   .speaker-grid, .thread-grid, .lab-grid, .exhibit-grid, .facts { grid-template-columns: repeat(2, 1fr); }
+  .speaker-card#speaker-simon { grid-column: 1 / -1; }
 }

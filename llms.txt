@@ -1,8 +1,9 @@
 # Sustainability in Fashion and Textiles: Closing the Loop
 
-> A one-day workshop bringing together life cycle assessment, circular design
-> practice, and the Digital Product Passport, with a fashion exhibit of modular,
-> upcycled, heritage and natural pieces.
+> An interdisciplinary workshop on how the fashion and textile industry can move
+> from linear production to circular systems. It examines circular design, life
+> cycle assessment, and digital technologies for transparency, traceability, and
+> circularity, alongside fashion exhibits and a closing panel discussion.
 >
 > It is a **sub-event of Circular Lab** (https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/),
 > the University of St.Gallen's research programme for a sustainable circular
@@ -20,7 +21,7 @@
 
 ## Programme
 
-- 09.00–09.15 — Welcome and Opening — Prof. Dr. Andrei Ciortea (ICS-HSG),
+- 09.00–09.15 — Welcome and Opening — Andrei Ciortea (ICS-HSG),
   Fabian Takacs (HSG) and Steffen Finck (FHV), who lead Circular Lab
 - 09.15–09.45 — Is Circularity Always More Sustainable? Insights from Life Cycle
   Assessment — Didier Beloin-Saint-Pierre (Empa)
@@ -31,7 +32,7 @@
 - 11.00–11.30 — Student Perspective: Modern Fashion for Circularity —
   Jonas Bendel & Simeon Triantafillidis (Albstadt-Sigmaringen University)
 - 11.30–12.00 — Change Management & Sustainability — OST (speaker to be announced)
-- 12.00–12.30 — Circular Economy Information System — Alessandro Giugno (ICS-HSG)
+- 12.00–12.30 — Circular Economy Information Systems — Alessandro Giugno (ICS-HSG)
 - 12.30–13.30 — Lunch Break (included)
 - Deep dive, Digital Product Passport (one block, two talks):
   - 13.30–14.00 — Regulation, Standards & Roll-outs for Apparel —
@@ -39,11 +40,11 @@
   - 14.00–14.30 — DPP in Action: Real-World Case Studies for the Circular
     Economy — Moritz Fiertz (FREITAG AG)
 - 14.30–15.30 — Panel Discussion with the Audience: The Sustainability and
-  Globalization Conundrum
+  Globalization Conundrum — moderated by Simon Mayer (HSG)
 
 ## Speakers
 
-- **Prof. Dr. Andrei Ciortea** — Assistant Professor for Web-based Systems,
+- **Andrei Ciortea** — Assistant Professor for Web-based Systems,
   Institute of Computer Science, University of St.Gallen; co-initiator of
   Circular Lab.
 - **Didier Beloin-Saint-Pierre** — Scientist, Technology & Society Lab, Empa.
@@ -63,6 +64,8 @@
   EPCIS 2.0 and C2PA.
 - **Moritz Fiertz** — FREITAG AG. Digital Product Passport in the Circular Tarp
   programme.
+- **Simon Mayer** — University of St.Gallen; co-initiator of Circular Lab and
+  moderator of the closing panel discussion.
 
 ## Parent programme
 
@@ -71,11 +74,12 @@ Albstadt-Sigmaringen University, DHBW Ravensburg, FHV Vorarlberg.
 Funders: Interreg Alpenrhein-Bodensee-Hochrhein (co-funded by the European
 Union), the Swiss Confederation, and the Canton of St.Gallen.
 
-Circular Lab advances the circular economy by optimising business models,
-developing product designs, and building the ecosystems circular products need.
-Its textiles strand works on modular garment design, recyclability, and reducing
-overproduction. Formats include the Circular Lab Conference, the CLab Exchange,
-webinars, museum collaborations, and workshops such as this one.
+The Circular Lab is an interdisciplinary research and practice network dedicated
+to advancing the circular economy in the Lake Constance region. As a central hub
+for circular innovation and business-oriented sustainability, the Lab
+collaborates with companies, universities, and other stakeholders to develop
+practical approaches for implementing circular value creation, particularly in
+the textile industry and the agricultural and food sectors.
 
 - Circular Lab: https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/
 - More about the lab: https://www.unisg.ch/de/forschung/forschung-im-fokus/circular-lab/mehr-zum-lab/

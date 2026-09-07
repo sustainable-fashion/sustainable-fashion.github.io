@@ -780,6 +780,45 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 
 .exhibit-card p { font-size: 0.9rem; }
 
+/* Lookbook: the exhibitors' own photographs, same hairline idiom as the card
+   grids — 1px gaps over a black ground, so the rules between frames match the
+   rules between cards. Every frame in the supplied lookbook is 2:3, so the
+   tiles are 2:3 and nothing is cropped to fit the grid; keep new ones to that
+   ratio (see .agent-notes.md for the crop recipe). */
+.lookbook { grid-column: 3 / -1; margin-top: 3.5rem; }
+
+.lookbook-intro { font-size: 0.9rem; color: #555; max-width: 62ch; }
+
+.look { margin-top: 1.75rem; }
+
+/* Mirrors .cluster-label: mono eyebrow, accent lead-in, black body. */
+.look-cap {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  padding-bottom: 0.7rem;
+}
+.look-cap span { color: var(--accent); margin-right: 0.55rem; }
+
+.look-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.look-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: var(--cream);   /* holds the frame while the file loads */
+}
+
 /* ─── VENUE ─── */
 .facts { grid-column: 3 / -1; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
 
@@ -859,7 +898,7 @@ footer .container {
   .col-label { justify-self: start; width: 100%; }
   .col-label, .col-head, .col-body, .col-full,
   .intro-box, .thread-grid, .programme, .lab-grid, .lab-brand, .logo-block,
-  .speaker-grid, .exhibit-grid, .facts, .venue-cta { grid-column: 1 / -1; }
+  .speaker-grid, .exhibit-grid, .lookbook, .facts, .venue-cta { grid-column: 1 / -1; }
 
   .lab-brand { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
   .lab-brand-logo img { margin: 0 auto; }
@@ -879,6 +918,10 @@ footer .container {
 
   .thread-grid, .lab-grid, .speaker-grid, .exhibit-grid, .facts { grid-template-columns: 1fr; }
   .speaker-grid, .facts { gap: 1px; }
+
+  /* The cards stack, but the lookbook must not: a 2:3 frame at full width is
+     a screen and a half of one photograph. Two up keeps a look scannable. */
+  .look-row { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {

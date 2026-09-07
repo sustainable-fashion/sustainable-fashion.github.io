@@ -477,6 +477,21 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 .logo-img--hsg   { max-height: 34px; }
 .logo-img--wappen { max-height: 66px; }
 
+.funding-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  box-shadow: 0 0 0 1px #dcdcdc;
+}
+
+.funding-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 /* Same hairline-grid treatment as the About threads, so the parent
    programme reads as part of the same system rather than a bolt-on. */

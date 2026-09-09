@@ -751,6 +751,28 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 }
 .speaker-trio .speaker-avatar { width: 60px; height: 60px; margin-bottom: 0; }
 
+/* Four portraits in one card (team card). */
+.speaker-quad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  height: 108px;
+  margin-bottom: 1.25rem;
+}
+.speaker-quad .speaker-avatar { width: 52px; height: 52px; margin-bottom: 0; font-size: 0.75rem; }
+
+/* Five portraits in one card (team card). */
+.speaker-quintet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 108px;
+  margin-bottom: 1.25rem;
+}
+.speaker-quintet .speaker-avatar { width: 44px; height: 44px; margin-bottom: 0; font-size: 0.7rem; }
+
 /* ─── EXHIBITS ─── */
 .exhibit-grid {
   grid-column: 3 / -1;

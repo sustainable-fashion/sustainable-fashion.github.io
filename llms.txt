@@ -22,7 +22,8 @@
 ## Programme
 
 - 09.00–09.15 — Welcome and Opening — Andrei Ciortea (ICS-HSG),
-  Fabian Takacs (HSG) and Steffen Finck (FHV), who lead Circular Lab
+  Fabian Takacs (HSG), who leads Circular Lab, and Nina Schneider, representing
+  the co-leading Business Informatics Research Center at FHV
 - 09.15–09.45 — Is Circularity Always More Sustainable? Insights from Life Cycle
   Assessment — Didier Beloin-Saint-Pierre (Empa)
 - 09.45–10.00 — Fashion Exhibits: Modular, Upcycled, Heritage & Natural —

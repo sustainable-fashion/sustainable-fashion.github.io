@@ -31,7 +31,8 @@
 - 10.30–11.00 — Startup Perspective: Circular Fashion — Cristina Dan (SOLVE Studio)
 - 11.00–11.30 — Student Perspective: Modern Fashion for Circularity —
   Jonas Bendel & Simeon Triantafillidis (Albstadt-Sigmaringen University)
-- 11.30–12.00 — Change Management & Sustainability — OST (speaker to be announced)
+- 11.30–12.00 — From Vision to Action: Organising Circular Transformation —
+  Oliver Christ & Jasmin Demann (OST)
 - 12.00–12.30 — Circular Economy Information Systems — Alessandro Giugno (ICS-HSG)
 - 12.30–13.30 — Lunch Break (included)
 - Deep dive, Digital Product Passport (one block, two talks):
@@ -56,6 +57,12 @@
 - **Jonas Bendel & Simeon Triantafillidis** — Albstadt-Sigmaringen University
   (hs-albsig.de). Longevity, heritage, vintage and natural pieces; the
   R-strategies in practice.
+- **Oliver Christ & Jasmin Demann** — Institute for Organization & Leadership
+  (IOL), OST – Eastern Switzerland University of Applied Sciences. Oliver brings
+  25 years of experience in digital business, innovation and technology-driven
+  transformation. Jasmin connects strategic organisational development with
+  sustainability and digital transformation, informed by her experience at
+  Bain & Company and the Technical University of Munich.
 - **Alessandro Giugno** — Institute of Computer Science, University of St.Gallen.
   Socio-technical systems; information management for circular economy and
   sustainability.

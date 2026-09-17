@@ -666,21 +666,6 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
    non-talk item in the day. */
 .slot--exhibit { background: rgba(232, 225, 211, 0.5); padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; }
 
-.slot--tba .slot-title { color: #444; }
-
-.tba-chip {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mid);
-  border: 1px dashed #cccccc;
-  border-radius: 999px;
-  padding: 0.3rem 0.7rem;
-}
-
 /* ─── SPEAKERS ─── */
 /* Three-up keeps the nine workshop contributors in complete rows while
    retaining the compact team-brick treatment. */

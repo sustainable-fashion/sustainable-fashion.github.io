@@ -2,4 +2,5 @@
 .agent-notes.md
 
 Bilder .pdf
-*.pdf
+outputs/
+CLab_Workshop_Description_v2.pdf

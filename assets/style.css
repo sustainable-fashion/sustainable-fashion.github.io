@@ -150,8 +150,9 @@ nav a:hover { color: var(--accent); }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ─── HERO ─── */
-/* Rebuilds the poster: full-bleed campaign photo with the white
-   type panel sitting on its left third. */
+/* The poster's layout: full-bleed photo with the white type panel on its
+   left third. Since the event it carries a photograph from the day, framed
+   so the faces sit right of the panel and clear of the wash. */
 #hero {
   margin-top: var(--nav);
   position: relative;
@@ -179,45 +180,10 @@ nav a:hover { color: var(--accent); }
   width: 100%;
   height: clamp(460px, 62vw, 760px);
   object-fit: cover;
-  object-position: 62% 32%;
+  object-position: 50% 18%;
 }
 
 .hero-media { position: relative; }
-
-.hero-credit {
-  position: absolute;
-  z-index: 2;
-  right: clamp(1rem, 2.5vw, 2.5rem);
-  bottom: clamp(1rem, 2.5vw, 2.5rem);
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.55rem 0.7rem 0.55rem 0.85rem;
-  background: var(--white);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  color: var(--black);
-  text-decoration: none;
-  transition: box-shadow 0.15s;
-}
-
-.hero-credit:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); }
-.hero-credit:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-
-.hero-credit span {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero-credit img {
-  display: block;
-  width: 104px;
-  height: auto;
-  flex: 0 0 auto;
-}
 
 .hero-inner {
   position: absolute;
@@ -865,6 +831,50 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
   background: var(--cream);   /* holds the frame while the file loads */
 }
 
+/* ─── IMPRESSIONS ─── */
+/* Photographs from the day, in the lookbook's hairline idiom: 1px gaps over
+   a black ground. Twelve columns: one wide runway frame (8) with a portrait
+   beside it (4), then two pairs (6 + 6). The portrait is taken out of the
+   flow and fills whatever height the 3:2 frame next to it sets. */
+.impressions {
+  grid-column: 3 / -1;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1px;
+  background: var(--black);
+}
+
+.impression { position: relative; grid-column: span 6; background: var(--cream); }
+.impression--wide { grid-column: span 8; }
+.impression--tall { grid-column: span 4; }
+
+.impression img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.impression--tall img { position: absolute; inset: 0; height: 100%; object-position: 50% 40%; }
+
+/* Caption chip: the mono eyebrow on a white tag, like the old hero credit. */
+.impression figcaption {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.35rem 0.6rem;
+  background: var(--white);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+
 /* ─── VENUE ─── */
 .facts { grid-column: 3 / -1; margin-top: 2.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; }
 
@@ -944,7 +954,7 @@ footer .container {
   .col-label { justify-self: start; width: 100%; }
   .col-label, .col-head, .col-body, .col-full,
   .intro-box, .thread-grid, .programme, .lab-grid, .lab-brand, .logo-block,
-  .speaker-grid, .exhibit-grid, .lookbook, .facts, .venue-cta { grid-column: 1 / -1; }
+  .speaker-grid, .exhibit-grid, .lookbook, .impressions, .facts, .venue-cta { grid-column: 1 / -1; }
 
   .lab-brand { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
   .lab-brand-logo img { margin: 0 auto; }
@@ -958,7 +968,7 @@ footer .container {
      and bleach the type. */
   #hero { background: var(--white); }
   #hero::after { display: none; }
-  .hero-photo { height: clamp(280px, 56vw, 420px); object-position: 60% 25%; }
+  .hero-photo { height: clamp(280px, 56vw, 420px); object-position: 65% 20%; }
   .hero-inner { position: static; display: block; padding: 0; }
   .hero-card { width: 100%; box-shadow: none; padding: 2.25rem 2rem 2.5rem; }
 
@@ -968,6 +978,14 @@ footer .container {
   /* The cards stack, but the lookbook must not: a 2:3 frame at full width is
      a screen and a half of one photograph. Two up keeps a look scannable. */
   .look-row { grid-template-columns: repeat(2, 1fr); }
+
+  /* Impressions go two-up: the wide frames keep the full width, the rest
+     pair off as 4:5 crops so a phone screen holds two at once. */
+  .impressions { grid-template-columns: repeat(2, 1fr); }
+  .impression, .impression--tall { grid-column: span 1; }
+  .impression--wide, .impression--wide-sm { grid-column: 1 / -1; }
+  .impression img, .impression--tall img { position: static; height: auto; aspect-ratio: 4 / 5; }
+  .impression--wide img, .impression--wide-sm img { aspect-ratio: 3 / 2; }
 }
 
 @media (max-width: 700px) {
@@ -981,15 +999,11 @@ footer .container {
   section { padding: 4rem 0; }
   .intro-standalone { padding: 3rem 0 3.5rem; }
   .hero-card { padding: 2rem 1.25rem 2.25rem; }
-  .hero-credit {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    max-width: calc(100% - 1.5rem);
-    gap: 0.6rem;
-    padding: 0.45rem 0.55rem 0.45rem 0.65rem;
-  }
-  .hero-credit span { font-size: 0.6rem; }
-  .hero-credit img { width: 82px; }
+  .impression figcaption { left: 0.5rem; bottom: 0.5rem; max-width: calc(100% - 1rem); font-size: 0.56rem; }
+  /* Long affiliations ("Hochschule Albstadt-Sigmaringen") would push a tag
+     past the screen edge; let the affiliation wrap under the name instead. */
+  .tag { max-width: 100%; border-radius: 1rem; }
+  .tag-org { white-space: normal; }
   /* Circular Lab's mark alone — the event name and its divider do not fit
      next to the date chip and the hamburger at this width. */
   .nav-wordmark, .nav-divider { display: none; }

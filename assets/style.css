@@ -150,9 +150,9 @@ nav a:hover { color: var(--accent); }
 .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ─── HERO ─── */
-/* The poster's layout: full-bleed photo with the white type panel on its
-   left third. Since the event it carries a photograph from the day, framed
-   so the faces sit right of the panel and clear of the wash. */
+/* The poster's layout: full-bleed photo with the white type panel over one
+   third of it. Since the event it carries the runway walk, whose lead models
+   are on the left, so the panel and its wash sit on the right third. */
 #hero {
   margin-top: var(--nav);
   position: relative;
@@ -160,14 +160,14 @@ nav a:hover { color: var(--accent); }
   overflow: hidden;
 }
 
-/* Soft white wash over the left third, so the type panel sits on a calm
-   ground the way the poster's white column does, instead of on top of a
-   half-covered model. Fades out well before the centre look. */
+/* Soft white wash under the panel, so it sits on a calm ground the way the
+   poster's white column does, instead of on top of a half-covered model.
+   Fades out well before the centre look. */
 #hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
+  background: linear-gradient(270deg,
     rgba(255,255,255,0.88) 0%,
     rgba(255,255,255,0.78) 20%,
     rgba(255,255,255,0.30) 36%,
@@ -180,7 +180,7 @@ nav a:hover { color: var(--accent); }
   width: 100%;
   height: clamp(460px, 62vw, 760px);
   object-fit: cover;
-  object-position: 50% 18%;
+  object-position: 50% 30%;
 }
 
 .hero-media { position: relative; }
@@ -194,6 +194,7 @@ nav a:hover { color: var(--accent); }
   padding: 0 2rem;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   pointer-events: none;
 }
 
@@ -833,9 +834,11 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 
 /* ─── IMPRESSIONS ─── */
 /* Photographs from the day, in the lookbook's hairline idiom: 1px gaps over
-   a black ground. Twelve columns: one wide runway frame (8) with a portrait
-   beside it (4), then two pairs (6 + 6). The portrait is taken out of the
-   flow and fills whatever height the 3:2 frame next to it sets. */
+   a black ground. Twelve columns: a wide runway frame (8) with a portrait
+   beside it (4), a pair (6 + 6), the wide/portrait row mirrored, then two
+   more pairs. Portraits are taken out of the flow and fill whatever height
+   the 3:2 frame next to them sets. Ten photos keep the two-up phone grid
+   free of orphans; recheck that when adding or removing one. */
 .impressions {
   grid-column: 3 / -1;
   margin-top: 3rem;
@@ -968,7 +971,7 @@ footer .container {
      and bleach the type. */
   #hero { background: var(--white); }
   #hero::after { display: none; }
-  .hero-photo { height: clamp(280px, 56vw, 420px); object-position: 65% 20%; }
+  .hero-photo { height: clamp(280px, 56vw, 420px); object-position: 35% 30%; }
   .hero-inner { position: static; display: block; padding: 0; }
   .hero-card { width: 100%; box-shadow: none; padding: 2.25rem 2rem 2.5rem; }
 
@@ -983,9 +986,9 @@ footer .container {
      pair off as 4:5 crops so a phone screen holds two at once. */
   .impressions { grid-template-columns: repeat(2, 1fr); }
   .impression, .impression--tall { grid-column: span 1; }
-  .impression--wide, .impression--wide-sm { grid-column: 1 / -1; }
+  .impression--wide { grid-column: 1 / -1; }
   .impression img, .impression--tall img { position: static; height: auto; aspect-ratio: 4 / 5; }
-  .impression--wide img, .impression--wide-sm img { aspect-ratio: 3 / 2; }
+  .impression--wide img { aspect-ratio: 3 / 2; }
 }
 
 @media (max-width: 700px) {

@@ -9,7 +9,7 @@
 > the University of St.Gallen's research programme for a sustainable circular
 > economy in the Lake Constance region — specifically its textiles focus area.
 
-- **When:** Tuesday, 27 October 2026, 9.00–15.30
+- **When:** Tuesday, 27 October 2026, 9.00–16.00
 - **Where:** Atrium, HSG Square (SQUARE, Guisanstrasse 20, 9010 St.Gallen), Switzerland
 - **Host programme:** Circular Lab, co-led by the University of St.Gallen,
   funded with EUR 4 million through Interreg Alpenrhein-Bodensee-Hochrhein and
@@ -28,20 +28,20 @@
   Assessment — Didier Beloin-Saint-Pierre (Empa)
 - 09.45–10.00 — Fashion Exhibits: Modular, Upcycled, Heritage & Natural —
   Cristina Dan, Jonas Bendel, Simeon Triantafillidis
-- 10.00–10.30 — Coffee Break (included)
-- 10.30–11.00 — Startup Perspective: Circular Fashion — Cristina Dan (SOLVE Studio)
-- 11.00–11.30 — Student Perspective: Modern Fashion for Circularity —
+- 10.00–11.00 — Coffee Break (included)
+- 11.00–11.30 — Startup Perspective: Circular Fashion — Cristina Dan (SOLVE Studio)
+- 11.30–12.00 — Student Perspective: Modern Fashion for Circularity —
   Jonas Bendel & Simeon Triantafillidis (Hochschule Albstadt-Sigmaringen)
-- 11.30–12.00 — From Vision to Action: Organising Circular Transformation —
+- 12.00–12.30 — From Vision to Action: Organising Circular Transformation —
   Oliver Christ & Jasmin Demann (OST)
-- 12.00–12.30 — Circular Economy Information Systems — Alessandro Giugno (ICS-HSG)
 - 12.30–13.30 — Lunch Break (included)
+- 13.30–14.00 — Circular Economy Information Systems — Alessandro Giugno (ICS-HSG)
 - Deep dive, Digital Product Passport (one block, two talks):
-  - 13.30–14.00 — Regulation, Standards & Roll-outs for Apparel —
+  - 14.00–14.30 — Regulation, Standards & Roll-outs for Apparel —
     Dominique Guinard (spotd)
-  - 14.00–14.30 — DPP in Action: Real-World Case Studies for the Circular
+  - 14.30–15.00 — DPP in Action: Real-World Case Studies for the Circular
     Economy — Moritz Fiertz (FREITAG AG)
-- 14.30–15.30 — Panel Discussion with the Audience: The Sustainability and
+- 15.00–16.00 — Panel Discussion with the Audience: The Sustainability and
   Globalization Conundrum — moderated by Simon Mayer (HSG)
 
 ## Speakers

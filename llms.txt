@@ -9,7 +9,7 @@
 > the University of St.Gallen's research programme for a sustainable circular
 > economy in the Lake Constance region — specifically its textiles focus area.
 
-- **When:** Tuesday, 27 October 2026, 9.00–15.45
+- **When:** Tuesday, 27 October 2026, 9.00–15.30
 - **Where:** Atrium, HSG Square (SQUARE, Guisanstrasse 20, 9010 St.Gallen), Switzerland
 - **Host programme:** Circular Lab, co-led by the University of St.Gallen,
   funded with EUR 4 million through Interreg Alpenrhein-Bodensee-Hochrhein and
@@ -41,12 +41,8 @@
     Dominique Guinard (spotd)
   - 14.00–14.30 — DPP in Action: Real-World Case Studies for the Circular
     Economy — Moritz Fiertz (FREITAG AG)
-- Closing (one block, talk leading into the panel):
-  - 14.30–15.00 — No Circular Textiles Without Industrial Capability:
-    Circularity as a Matter of Value Creation, Resilience, and Industrial
-    Policy — Christian Kaiser (Hochschule Albstadt-Sigmaringen)
-  - 15.00–15.45 — Panel Discussion with the Audience: The Sustainability and
-    Globalization Conundrum — moderated by Simon Mayer (HSG)
+- 14.30–15.30 — Panel Discussion with the Audience: The Sustainability and
+  Globalization Conundrum — moderated by Simon Mayer (HSG)
 
 ## Speakers
 
@@ -76,9 +72,6 @@
   EPCIS 2.0 and C2PA.
 - **Moritz Fiertz** — FREITAG AG. Digital Product Passport in the Circular Tarp
   programme.
-- **Christian Kaiser** — Professor and Vice Dean, Faculty of Engineering,
-  Hochschule Albstadt-Sigmaringen; closing talk on circularity as a matter of
-  value creation, resilience and industrial policy, leading into the panel.
 - **Simon Mayer** — University of St.Gallen; co-initiator of Circular Lab and
   moderator of the closing panel discussion.
 

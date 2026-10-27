@@ -1005,5 +1005,5 @@ footer .container {
 /* ─── TABLET: keep speakers two-up before collapsing ─── */
 @media (min-width: 901px) and (max-width: 1050px) {
   .speaker-grid, .thread-grid, .lab-grid, .exhibit-grid, .facts { grid-template-columns: repeat(2, 1fr); }
-  .speaker-card#speaker-closing { grid-column: 1 / -1; }
+  .speaker-card#speaker-simon { grid-column: 1 / -1; }
 }

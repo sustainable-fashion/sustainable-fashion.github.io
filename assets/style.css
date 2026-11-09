@@ -599,6 +599,26 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
 .tag-org  { font-size: 0.72rem; font-weight: 400; color: var(--mid); white-space: nowrap; }
 .tag-org::before { content: "· "; }
 
+/* Slides chip: sits in the row of speaker tags, same pill, accent text, so
+   the talk's deck is one click from the programme. Decks live in
+   assets/talks/ as <speaker>-<topic>.pdf. */
+.slides-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.slides-chip:hover { background: var(--accent); color: var(--white); }
+
 /* Two consecutive talks read as one deep dive: a labelled bracket down
    the left edge ties them together without breaking the time column. */
 .cluster {
@@ -717,6 +737,9 @@ p  { font-size: 1rem; font-weight: 300; line-height: 1.7; color: #333; }
   border-bottom: 1px solid var(--accent);
 }
 .speaker-link:hover { opacity: 0.65; }
+/* A second link (the talk's slides) sits right under the first instead of
+   splitting the card's free space with it. */
+.speaker-link + .speaker-link { margin-top: 0.55rem; padding-top: 0; }
 
 /* Cards that hold two people (the student duo). The wrapper keeps the
    128px height of a single avatar so the role/name lines of every card in
